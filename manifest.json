@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Cloudflare Magic Linker",
+    "version": "1.0.0",
+    "description": "Create magic deep links for the Cloudflare dashboard.",
+    "icons": {
+        "128": "src/images/icon128.png"
+    },
+    "action": {
+        "default_popup": "src/popup.html"
+    },
+    "host_permissions": [
+        "https://dash.cloudflare.com/*"
+    ],
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ]
+}
