@@ -20,3 +20,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 [GNU GPL v3](./LICENSE)
+
+Not associated or endorsed by Cloudflare. Cloudflare™️ is a trademark of Cloudflare, Inc.
