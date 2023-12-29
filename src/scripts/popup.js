@@ -69,9 +69,21 @@ function parseUrlPath(url) {
 		path.shift();
 	}
 
+	// if a pages path with a deployment id, save it
+	let pagesDeploymentId = '';
+	if (pagesName !== '' && path[0].length === 36) {
+		pagesDeploymentId = path[0];
+		path.shift();
+	}
+
 	// no data detected, return the path rejoined
-	if (accountId === '' && zoneDomain === '' && pagesName === '') {
+	if (accountId === '' && zoneDomain === '' && pagesName === '' && pagesDeploymentId === '') {
 		return `/${path.join('/')}`;
+	}
+
+	// if pagesName and pagesDeploymentId are both present, return the path for pages
+	if (accountId !== '' && pagesName !== '' && pagesDeploymentId !== '') {
+		return `/:account/pages/view/:pages-project/:pages-deployment/${path.join('/')}`;
 	}
 
 	// if pagesName is present, return the path for pages

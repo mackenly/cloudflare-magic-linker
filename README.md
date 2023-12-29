@@ -5,6 +5,7 @@ Supports:
 - `:account` - Account ID
 - `:zone` - Zone domain name
 - `:pages-project` - Pages project name
+- `:pages-deployment` - Pages deployment ID
 
 ## Installation
 1. Clone this repo
