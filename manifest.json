@@ -10,7 +10,8 @@
         "default_popup": "src/popup.html"
     },
     "host_permissions": [
-        "https://dash.cloudflare.com/*"
+        "https://dash.cloudflare.com/*",
+        "https://one.dash.cloudflare.com/*"
     ],
     "permissions": [
         "activeTab",

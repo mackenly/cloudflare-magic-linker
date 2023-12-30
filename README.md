@@ -2,10 +2,13 @@
 Chrome extension for copying magic deep links into the Cloudflare dashboard
 
 Supports:
-- `:account` - Account ID
+- `:account` - Account ID for the Dashboard and Zero Trust
 - `:zone` - Zone domain name
 - `:pages-project` - Pages project name
 - `:pages-deployment` - Pages deployment ID
+
+> [!TIP] 
+> The Zero Trust dashboard's support for deep links is currently less mature than the regular dashboard, so some links may not work as expected. Make sure to test your links before sharing them.
 
 ## Installation
 1. Clone this repo

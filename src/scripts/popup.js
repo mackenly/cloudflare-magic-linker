@@ -27,18 +27,23 @@ document.addEventListener(
 );
 
 function createMagicLink(url) {
-	// if url does not begin with https://dash.cloudflare.com/ then return error
-	if (url.indexOf('https://dash.cloudflare.com/') !== 0) {
+	// if url does not begin with https://dash.cloudflare.com/ or one.dash.cloudflare.com/, return it
+	if (url.indexOf('https://dash.cloudflare.com/') !== 0 && url.indexOf('https://one.dash.cloudflare.com/') !== 0) {
 		return url;
 	}
 
-	// if url is a magic link, return it
-	return 'https://dash.cloudflare.com/?to=' + parseUrlPath(url);
+	// if for one.dash.cloudflare.com
+	if (url.indexOf('https://one.dash.cloudflare.com/') === 0) {
+		return 'https://one.dash.cloudflare.com/?to=' + parseUrlPath(url);
+	} else {
+		// for dash.cloudflare.com
+		return 'https://dash.cloudflare.com/?to=' + parseUrlPath(url);
+	}
 }
 
 function parseUrlPath(url) {
-	// remove https://dash.cloudflare.com/ from url
-	let path = url.replace('https://dash.cloudflare.com/', '');
+	// remove https://dash.cloudflare.com/ and https://one.dash.cloudflare.com/ from the url
+	let path = url.replace('https://dash.cloudflare.com/', '').replace('https://one.dash.cloudflare.com/', '');
 
 	// remove trailing slash if exists
 	path = path.replace(/\/$/, '');
