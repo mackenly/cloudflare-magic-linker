@@ -11,6 +11,10 @@ Supports:
 > The Zero Trust dashboard's support for deep links is currently less mature than the regular dashboard, so some links may not work as expected. Make sure to test your links before sharing them.
 
 ## Installation
+### From Chrome Webstore (*recommended*)
+[Cloudflare Magic Linker on Chrome Webstore](https://chromewebstore.google.com/detail/fongdcpejhfehpdcahcjncgfhkepoico)
+
+### From Source
 1. Clone this repo
 2. Open Chrome and navigate to `chrome://extensions`
 3. Enable developer mode
