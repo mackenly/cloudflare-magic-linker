@@ -5,20 +5,41 @@ document.addEventListener(
 		checkPageButton.addEventListener(
 			'click',
 			function () {
-				chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-					// create the magic link
-					const url = createMagicLink(tabs[0].url);
+				// determine if chrome or other browser
+				const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-					// copy the url to the clipboard
-					navigator.clipboard.writeText(url);
 
-					// update the status message
-					document.getElementById('generate').textContent = 'Copied!';
-					// remove the status message after 2 seconds
-					setTimeout(function () {
-						window.close();
-					}, 2000);
-				});
+				if (isChrome) {
+					chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+						// create the magic link
+						const url = createMagicLink(tabs[0].url);
+
+						// copy the url to the clipboard
+						navigator.clipboard.writeText(url);
+
+						// update the status message
+						document.getElementById('generate').textContent = 'Copied!';
+						// remove the status message after 2 seconds
+						setTimeout(function () {
+							window.close();
+						}, 2000);
+					});
+				} else {
+					browser.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+						// create the magic link
+						const url = createMagicLink(tabs[0].url);
+
+						// copy the url to the clipboard
+						navigator.clipboard.writeText(url);
+
+						// update the status message
+						document.getElementById('generate').textContent = 'Copied!';
+						// remove the status message after 2 seconds
+						setTimeout(function () {
+							window.close();
+						}, 2000);
+					});
+				}
 			},
 			false
 		);

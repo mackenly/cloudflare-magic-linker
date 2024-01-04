@@ -12,5 +12,8 @@
     "host_permissions": [
         "https://dash.cloudflare.com/*",
         "https://one.dash.cloudflare.com/*"
+    ],
+    "permissions": [
+        "tabs"
     ]
 }
