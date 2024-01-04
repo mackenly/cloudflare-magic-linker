@@ -8,7 +8,6 @@ document.addEventListener(
 				// determine if chrome or other browser
 				const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-
 				if (isChrome) {
 					chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 						// create the magic link
