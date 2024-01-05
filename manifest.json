@@ -15,5 +15,10 @@
     ],
     "permissions": [
         "tabs"
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "cloudflare-magic-linker@example.com"
+        }
+    }
 }
