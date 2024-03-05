@@ -101,9 +101,23 @@ function parseUrlPath(url) {
 		path.shift();
 	}
 
+	// if a workers path, get the worker name
+	let workerName = '';
+	if (path[0] === 'workers') {
+		path.shift(); // /workers
+		path.shift(); // /services
+		path.shift(); // /view
+		workerName = path[0];
+		path.shift();
+	}
+
 	// no data detected, return the path rejoined
-	if (accountId === '' && zoneDomain === '' && pagesName === '' && pagesDeploymentId === '') {
+	if (accountId === '' && zoneDomain === '' && pagesName === '' && pagesDeploymentId === '' && workerName === '') {
 		return `/${path.join('/')}`;
+	}
+
+	if (accountId !== '' && workerName !== '') {
+		return `/:account/workers/services/view/:worker/${path.join('/')}`;
 	}
 
 	// if pagesName and pagesDeploymentId are both present, return the path for pages
