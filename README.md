@@ -6,6 +6,7 @@ Supports:
 - `:zone` - Zone domain name
 - `:pages-project` - Pages project name
 - `:pages-deployment` - Pages deployment ID
+- `:worker` - Worker support
 
 ## Usage
 1. Install the extension using one of the methods below
